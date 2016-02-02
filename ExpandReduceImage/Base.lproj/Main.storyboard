@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExpandReduceImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fo4-8C-xaM">
+                                <rect key="frame" x="163" y="619" width="48" height="30"/>
+                                <state key="normal" title="Library"/>
+                                <connections>
+                                    <action selector="pressLibrayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="itx-GF-om9"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5U9-k3-53G">
+                                <rect key="frame" x="9" y="96" width="357" height="475"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lv-eQ-dpR">
+                                        <rect key="frame" x="0.0" y="0.0" width="357" height="475"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6Lv-eQ-dpR" firstAttribute="leading" secondItem="5U9-k3-53G" secondAttribute="leading" id="0YY-YI-fJ5"/>
+                                    <constraint firstAttribute="width" secondItem="5U9-k3-53G" secondAttribute="height" multiplier="3:4" id="DQl-51-b4L"/>
+                                    <constraint firstItem="6Lv-eQ-dpR" firstAttribute="width" secondItem="5U9-k3-53G" secondAttribute="width" id="Vtv-LL-DcM"/>
+                                    <constraint firstItem="6Lv-eQ-dpR" firstAttribute="height" secondItem="5U9-k3-53G" secondAttribute="height" id="fXm-Pd-o6w"/>
+                                    <constraint firstItem="6Lv-eQ-dpR" firstAttribute="top" secondItem="5U9-k3-53G" secondAttribute="top" id="fyv-J6-lGE"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Lv-eQ-dpR" secondAttribute="trailing" id="jdK-wQ-5fB"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Lv-eQ-dpR" secondAttribute="bottom" id="nNx-Ag-9B3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fo4-8C-xaM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.9" id="6le-hP-EfV"/>
+                            <constraint firstItem="5U9-k3-53G" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.95" id="jXd-zJ-L1S"/>
+                            <constraint firstItem="fo4-8C-xaM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jnh-3L-ff6"/>
+                            <constraint firstItem="5U9-k3-53G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s0J-pp-HQp"/>
+                            <constraint firstItem="5U9-k3-53G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s4e-kx-1Vo"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageViewFromLibrary" destination="6Lv-eQ-dpR" id="WIv-aW-bpC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260.5" y="226.5"/>
         </scene>
     </scenes>
 </document>
